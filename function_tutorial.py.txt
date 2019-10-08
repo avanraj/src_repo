@@ -1,0 +1,24 @@
+# print("Hello World")
+alpha = "abcdefghijklmnopqrstuvwxyz"
+
+def encrypt(s, shift=3):
+    encrypted_str = ""
+    for c in s:
+        index = alpha.index(c)
+        shifted_index = (index + shift ) % len(alpha)
+        encrypted_str += alpha[shifted_index]
+    return encrypted_str
+    
+def decrypt(e, shift=3):
+    decrypt_str = ""
+    for c in e:
+        index = alpha.index(c)
+        shifted_index = (index - shift ) % len(alpha)
+        decrypt_str += alpha[shifted_index]
+    return decrypt_str
+
+em = encrypt("abcxyz", 1)
+print(em)
+print(decrypt(em,1))
+
+print((0-1)%26)
